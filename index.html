@@ -45,6 +45,9 @@
         
         .form-row input[type] {
             min-width: 250px;
+            border-radius: 4px;
+            padding: 6px;
+            border-style: solid;
         }
 
         .btn {
@@ -70,7 +73,34 @@
         a:hover {
             cursor: pointer;
         }
+
+        input:focus {
+            border-color: blue;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        .error {
+            border-color: red;
+        }
     </style>
+
+    <script>
+        function checkpassword() {
+            let box1 = document.getElementById("password");
+            let box2 = document.getElementById("password_confirm");
+
+            if (box1.value != box2.value) {
+                box1.classList.add("error");
+                box2.classList.add("error");
+            } else {
+                box1.classList.remove("error");
+                box2.classList.remove("error");
+            }
+        }
+    </script>
 </head>
 <body>
     <div style="height: 100vh; display: flex">
@@ -112,18 +142,18 @@
         
                             <div>
                                 <label for="phone">PHONE NUMBER</label><br>
-                                <input type="text" id="phone" name="phone">
+                                <input type="text" id="phone" name="phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div>
                                 <label for="password">PASSWORD</label><br>
-                                <input type="password" id="password" name="password">
+                                <input type="password" id="password" name="password" onchange="checkpassword()">
                             </div>
                             <div>
                                 <label for="password_confirm">CONFIRM PASSWORD</label><br>
-                                <input type="password" id="password_confirm" name="password_confirm">
+                                <input type="password" id="password_confirm" name="password_confirm" onchange="checkpassword()">
                             </div>
                         </div>
     
@@ -133,7 +163,7 @@
                 </div>
 
                 <div style="padding: 32px;">
-                    <button type="submit" class="btn">Create Account</button><br><br>
+                    <button type="submit" class="btn" >Create Account</button><br><br>
 
                     <div>Already have an account? <a>Log in</a></div>
                 </div>
