@@ -12,7 +12,7 @@
         }
 
         .logo {
-            height: 80%;
+            height: min(125px, 75%);
             width: auto;
             display: inline-block;
         }
@@ -38,6 +38,37 @@
         .form-row {
             display: flex;
             gap: 50px;
+            line-height: 1.3em;
+            font-size: 0.9em;
+            color: #3f3f3f;
+        }
+        
+        .form-row input[type] {
+            min-width: 250px;
+        }
+
+        .btn {
+            background-color: #596d48;
+            color: white;
+            font-size: 1.2rem;
+            padding: 16px;
+            border-radius: 16px;
+            border-style: none;
+            width: min(250px, 100%);
+            box-shadow: 2px 2px 5px rgb(156, 156, 156);
+        }
+
+        .btn:hover {
+            cursor: pointer;
+        }
+
+        a {
+            color: #596d48;
+            font-weight: 700;
+        }
+
+        a:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -57,41 +88,41 @@
             </div>
 
             <form action="" method="post">
-                <div style="display: flex; align-items: center; width: 100%; background-color: rgb(255, 255, 255);">
+                <div style="display: flex; align-items: center; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 2px 2px 5px rgb(156, 156, 156);">
                     
                     <div class="form-container">
-                        <div>Let's do this!<br><br></div>
+                        <div style="font-size: 1.2em;">Let's do this!<br><br></div>
                         <div class="form-row">
                             <div>
-                                <label for="first_name">First Name</label><br>
+                                <label for="first_name">FIRST NAME</label><br>
                                 <input type="text" id="first_name" name="first_name">
                             </div>
                     
                             <div>
-                                <label for="last_name">Last Name</label><br>
+                                <label for="last_name">LAST NAME</label><br>
                                 <input type="text" id="last_name" name="last_name">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div>
-                                <label for="email">Email</label><br>
+                                <label for="email">EMAIL</label><br>
                                 <input type="email" id="email" name="email">
                             </div>
         
                             <div>
-                                <label for="phone">Phone Number</label><br>
+                                <label for="phone">PHONE NUMBER</label><br>
                                 <input type="text" id="phone" name="phone">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div>
-                                <label for="password">Password</label><br>
+                                <label for="password">PASSWORD</label><br>
                                 <input type="password" id="password" name="password">
                             </div>
                             <div>
-                                <label for="password_confirm">Confirm Password</label><br>
+                                <label for="password_confirm">CONFIRM PASSWORD</label><br>
                                 <input type="password" id="password_confirm" name="password_confirm">
                             </div>
                         </div>
@@ -101,9 +132,12 @@
 
                 </div>
 
-                <button type="submit">Create Account</button>
+                <div style="padding: 32px;">
+                    <button type="submit" class="btn">Create Account</button><br><br>
 
-                <div>Already have an account? <a>Log in</a></div>
+                    <div>Already have an account? <a>Log in</a></div>
+                </div>
+
             </form>
 
         </div>
